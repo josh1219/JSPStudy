@@ -12,7 +12,7 @@
 <%@ include file = "dbconn_oracle.jsp" %>
 
 <%
-	request.setCharacterEncoding("UTF-8"); // 폼에서 넘김 한글을 처리하기 위함
+	request.setCharacterEncoding("UTF-8"); // 폼에서 넘긴 한글을 처리하기 위함
 	String id = request.getParameter("id");
 	String passwd = request.getParameter("passwd");
 	String name = request.getParameter("name");

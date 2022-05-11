@@ -35,12 +35,12 @@ PreparedStatement
 	<%
 		//ResultSet 객체는 DB 의 테이블을 Select 해서 나온 결과의 레코드셋을 담는 객체
 		ResultSet rs = null;	
-		Statement pstmt = null;	//SQL 쿼리를 담아서 실행하는 객체
+		PreparedStatement pstmt = null;	//SQL 쿼리를 담아서 실행하는 객체
 		
 		try{
 			String sql = "select * from mbTbl";
-			pstmt = conn.createStatement();	// connection 객체의 createStatement() 로 stmt 를 활성화
-			rs = pstmt.executeQuery(sql);
+			pstmt = conn.prepareStatement(sql);	// connection 객체의 createStatement() 로 stmt 를 활성화
+			rs = pstmt.executeQuery();
 				// stmt.excuteQuery()	: select 한 결과를 ResultSet 객체로 저장해야하
 				// stmt.excuteUpdate()	: insert, update, delete
 			while(rs.next()){
