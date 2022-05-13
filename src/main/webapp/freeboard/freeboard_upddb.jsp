@@ -15,10 +15,13 @@
  ResultSet rs =null;
  int cnt=0;
  int pos=0;
- String cont=request.getParameter("content");
+ String cont=request.getParameter("content");		// 글 내용
 
- if (cont.length()==1) 
+ if (cont.length()==1) 		//  글 내용이 1이라면
   cont = cont+" " ;
+ 
+ // textarea 내의 ' 가 들어가면 DB에 insert, update시 문제 발생.
+ 
   while ((pos=cont.indexOf("\'", pos)) != -1) {
    String left=cont.substring(0, pos);
    String right=cont.substring(pos, cont.length());

@@ -3,7 +3,7 @@
 <%@ page language="java" import="java.sql.*,java.util.*" %> 
 <% request.setCharacterEncoding("euc-kr"); %>
 <HTML>
-<HEAD><TITLE>게시판(검색모드)</TITLE>
+<HEAD><TITLE>자유 게시판(검색모드)</TITLE>
 </HEAD>
 <BODY>
 <%@ include file = "dbconn_oracle.jsp" %>

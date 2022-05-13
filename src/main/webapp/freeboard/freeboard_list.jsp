@@ -190,7 +190,7 @@
     out.println("<TD>");
     int stepi= ((Integer)step.elementAt(j)).intValue();
     int imgcount = j-startrow; 
-    if (stepi > 0 ) {
+    if (stepi > 0 ) {		// 답변 글인 경우
      for(int count=0; count < stepi; count++)
       out.print("&nbsp;&nbsp;");
      out.println("<IMG name=icon"+imgcount+ " src=image/arrow.gif>");
@@ -198,7 +198,7 @@
      out.print(keyid.elementAt(j) + "&page=" + where );
      out.print(" onmouseover=\"rimgchg(" + imgcount + ",1)\"");
      out.print(" onmouseout=\"rimgchg(" + imgcount + ",2)\">");
-    } else {
+    } else {		// 처음 글인 경우
      out.println("<IMG name=icon"+imgcount+ " src=image/close.gif>");
      out.print("<A href=freeboard_read.jsp?id=");
      out.print(keyid.elementAt(j) + "&page=" + where );

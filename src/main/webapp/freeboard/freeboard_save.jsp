@@ -15,12 +15,16 @@
  if (cont.length()==1) 
   cont = cont+" "  ;
 
+ // textarea 내의 ' 가 들어가면 DB에 insert, update시 문제 발생.
+ 
+ 
  while ((pos=cont.indexOf("\'", pos)) != -1) {
   String left=cont.substring(0, pos);
   String right=cont.substring(pos, cont.length());
   cont = left + "\'" + right;
   pos += 2;
  }
+ 
 
 // out.println (pos);
 // out.println (cont.length());
@@ -57,6 +61,11 @@
 
   cnt = st.executeUpdate(sql); 
   
+  // out.println (sql);
+  
+  if (true) return;		//
+  
+  
 if (cnt >0) 
  out.println("데이터가 성공적으로 입력되었습니다.");
  else  
@@ -75,5 +84,4 @@ if (cnt >0)
  }
  
 %>
-
 <jsp:forward page ="freeboard_list.jsp"/>		
