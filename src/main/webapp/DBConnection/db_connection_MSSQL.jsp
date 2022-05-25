@@ -27,7 +27,7 @@
 		conn.close(); 
 		
 	}catch (Exception e){
-		connect=false;
+		connect= false;
 		e.printStackTrace(); 
 	}
 
